@@ -23,7 +23,8 @@ class FrontendStack(Stack):
 
         platform_mapping = {
             "x86_64": ecs.CpuArchitecture.X86_64,
-            "arm64": ecs.CpuArchitecture.ARM64
+            "arm64": ecs.CpuArchitecture.ARM64,
+            "AMD64": ecs.CpuArchitecture.X86_64
         }
         # Get architecture from platform (depending the machine that runs CDK)
         architecture = platform_mapping[platform.machine()] 
@@ -31,7 +32,7 @@ class FrontendStack(Stack):
         # The code that defines your stack goes here
         # Build Docker image
         imageAsset = DockerImageAsset(self, "FrontendStreamlitImage",
-            directory=("streamlit_serverless_app/streamlit_sample/")
+            directory=("streamlit_serverless_app/streamlit_application/")
         )
 
         # create app execute role

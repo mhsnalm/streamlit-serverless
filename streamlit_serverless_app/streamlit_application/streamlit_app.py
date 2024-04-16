@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Streamlit configuration
-st.title("Streamlit Serverless example with ECS Fargate")
+st.title("Streamlit Application")
 
 # Create a column with two rows
 col1, col2 = st.columns([0.1, 0.9])
